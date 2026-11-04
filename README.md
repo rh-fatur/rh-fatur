@@ -2,7 +2,7 @@
 
 <img src="./assets/heading.jpg" width="100%" alt="Monochrome samurai artwork" />
 
-# Hi, I'm Fatur.
+# Hi, I'm Fatur 👋.
 
 ### UI/UX Designer · Android Modder · Software Engineering Student
 
@@ -22,14 +22,14 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
 - 💻 Experimenting with different programming languages and tools
 - 🌱 Always curious about Tech things 
 
-## Languages
+## Languages 🌐
 
 - 🇮🇩 Indonesian — Native
 - 🇮🇩 Sundanese — Conversational
 - 🇺🇸 English (US) — Learning / using
 - 🇯🇵 Japanese — Beginner, still learning
 
-## Connect With Me
+## Connect With Me 🔗
 
 <p>
   <a href="https://instagram.com/rh.faturr"><img src="https://img.shields.io/badge/Instagram-rh.faturr-0D1117?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
@@ -40,7 +40,7 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
 
 // Discord is shown as a username badge because a username alone is not a reliable profile URL.
 
-## Technologies & Tools
+## Technologies & Tools 🔧
 
 **Design & Creative Tools**
 
@@ -55,14 +55,12 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
 
 <p>
   <img src="https://skillicons.dev/icons?i=html,css,js,python,cpp,dart,kotlin,bash&theme=dark" alt="HTML, CSS, JavaScript, Python, C++, Dart, Kotlin and Bash" />
-  <img src="https://img.shields.io/badge/Smali-0D1117?style=flat-square&logoColor=white" alt="Smali" />
 </p>
 
 **Android Development**
 
 <p>
   <img src="https://skillicons.dev/icons?i=androidstudio,flutter&theme=dark" alt="Android Studio and Flutter" />
-  <img src="https://img.shields.io/badge/MIO_Kitchen-0D1117?style=flat-square&logoColor=white" alt="MIO Kitchen" />
 </p>
 
 **Development Tools**
@@ -71,51 +69,31 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
   <img src="https://skillicons.dev/icons?i=git,github,vscode&theme=dark" alt="Git, GitHub and VS Code" />
 </p>
 
-## Currently Learning
+## Currently Learning 📚
 
-- Development workflow with VS Code
-- Android modding
-- UI/UX design
-- Website development
-- Mini game development
+- Development Workflow with VSCode
+- Android Modding
+- UI/UX Designer
+- Website Development
+- MiniGame Development
+- Roblox Studio
 
-## GitHub Statistics
+## GitHub Statistics 📊
 
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=rh-fatur&show_icons=true&include_all_commits=true&hide_border=true&bg_color=0D1117&title_color=FFFFFF&text_color=AAAAAA&icon_color=FFFFFF" alt="Fatur's GitHub statistics" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rh-fatur&layout=compact&hide_border=true&bg_color=0D1117&title_color=FFFFFF&text_color=AAAAAA" alt="Most used languages" />
-</p>
-
-<p align="center">
-  <img width="70%" src="https://streak-stats.demolab.com?user=rh-fatur&theme=github-dark-blue&hide_border=true&background=0D1117&ring=FFFFFF&fire=AAAAAA&currStreakLabel=FFFFFF" alt="GitHub contribution streak" />
-</p>
-
-## Contribution Graph
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rh-fatur&bg_color=0D1117&color=FFFFFF&line=888888&point=FFFFFF&area=true&hide_border=true" alt="GitHub contribution graph" />
-</p>
-
-## Arcade Corner
-
-### Space Shooter
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/rh-fatur/rh-fatur/output/space-shooter.gif" width="100%" alt="Monochrome pixel-art Space Shooter animation" />
-</p>
-
-### GitHub Pac-Man
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/rh-fatur/rh-fatur/output/pacman-contribution-graph.svg" width="100%" alt="Pac-Man contribution graph animation" />
-</p>
+![](https://github-readme-stats.shion.dev/api?username=rh-fatur&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
+![](https://streak-stats.demolab.com/?user=rh-fatur&theme=dark&hide_border=false)<br/>
+![](https://github-readme-stats.shion.dev/api/top-langs/?username=rh-fatur&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
 ---
 
 <div align="center">
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/rh-fatur/rh-fatur/output/pacman-contribution-graph.svg" width="100%" alt="Pac-Man contribution graph animation" />
+</p>
+
 *“Creating, experimenting, and improving — one line at a time.”*
 
-**Thanks for visiting my profile.**
+**Thanks for visiting my profile :>.**
 
 </div>
