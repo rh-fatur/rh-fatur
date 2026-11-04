@@ -2,11 +2,13 @@
 
 <img src="./assets/heading.jpg" width="100%" alt="Monochrome samurai artwork" />
 
-# Hi, I'm Fatur 👋.
+# Hi, I'm Fatur 👋
 
-### UI/UX Designer · Android Modder · Software Engineering Student
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=FFFFFF&center=true&vCenter=true&width=600&lines=UI%2FUX+Designer;Android+Modder;Software+Engineering+Student" alt="Typing SVG" /></a>
 
 *Designing interfaces, exploring systems, and building ideas through code.*
+
+<img src="https://komarev.com/ghpvc/?username=rh-fatur&label=Profile%20views&color=0e75b6&style=flat" alt="rh-fatur" />
 
 </div>
 
@@ -14,32 +16,26 @@
 
 <div align="center">
 
-## About Me
+## 📖 About Me
 
 I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX Design, Android Modding, and Software Development.
 
-- 🎨 Interested in clean and intuitive visual design
-- 📱 Developing Android Modder, like Porting, and Magisk Modules
-- ✍️ Enjoy writing, creating visual designs, and making tech content
-- 💻 Experimenting with different programming languages and tools
-- 🌱 Always curious about Tech things 
+🎨 Interested in clean and intuitive visual design <br>
+📱 Developing Android Modder, like Porting, and Magisk Modules <br>
+✍️ Enjoy writing, creating visual designs, and making tech content <br>
+💻 Experimenting with different programming languages and tools <br>
+🌱 Always curious about Tech things 
+
+<br>
+
+**🌐 Languages:**
+🇮🇩 Indonesian (Native) • 🇮🇩 Sundanese (Conversational) • 🇺🇸 English (Learning) • 🇯🇵 Japanese (Beginner)
 
 </div>
 
 <div align="center">
 
-## Languages 🌐
-
-- 🇮🇩 Indonesian — Native
-- 🇮🇩 Sundanese — Conversational
-- 🇺🇸 English (US) — Learning / using
-- 🇯🇵 Japanese — Beginner, still learning
-
-</div>
-
-<div align="center">
-
-## Connect With Me 🔗
+## 🔗 Connect With Me
 
 <p align="center">
   <a href="https://instagram.com/rh.faturr"><img src="https://img.shields.io/badge/Instagram-rh.faturr-0D1117?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
@@ -48,66 +44,63 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
   <img src="https://img.shields.io/badge/Discord-rh.fatur-0D1117?style=for-the-badge&logo=discord&logoColor=white" alt="Discord: rh.fatur" />
 </p>
 
-*// Discord is shown as a username badge because a username alone is not a reliable profile URL.*
+</div>
+
+<div align="center">
+
+## 🛠️ Technologies & Tools
+
+**Design & Creative Tools** <br>
+<img src="https://img.shields.io/badge/Figma-0D1117?style=flat-square&logo=figma&logoColor=white" alt="Figma" />
+<img src="https://img.shields.io/badge/Canva-0D1117?style=flat-square&logo=canva&logoColor=white" alt="Canva" />
+<img src="https://img.shields.io/badge/Alight_Motion-0D1117?style=flat-square&logoColor=white" alt="Alight Motion" />
+<img src="https://img.shields.io/badge/ibisPaint-0D1117?style=flat-square&logoColor=white" alt="ibisPaint" />
+
+<br><br>
+
+**Programming Languages & Frameworks** <br>
+<img src="https://skillicons.dev/icons?i=html,css,js,python,cpp,dart,kotlin,bash,androidstudio,flutter&theme=dark" alt="Skills" />
+
+<br><br>
+
+**Development Tools** <br>
+<img src="https://skillicons.dev/icons?i=git,github,vscode&theme=dark" alt="Tools" />
 
 </div>
 
 <div align="center">
 
-## Technologies & Tools 🔧
+## 📚 Currently Learning
 
-**Design & Creative Tools**
+`Development Workflow with VSCode` `Android Modding` `UI/UX Designer` `Website Development` `MiniGame Development` `Roblox Studio`
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Figma-0D1117?style=flat-square&logo=figma&logoColor=white" alt="Figma" />
-  <img src="https://img.shields.io/badge/Canva-0D1117?style=flat-square&logo=canva&logoColor=white" alt="Canva" />
-  <img src="https://img.shields.io/badge/Alight_Motion-0D1117?style=flat-square&logoColor=white" alt="Alight Motion" />
-  <img src="https://img.shields.io/badge/ibisPaint-0D1117?style=flat-square&logoColor=white" alt="ibisPaint" />
-</p>
+</div>
 
-**Programming Languages**
+---
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=html,css,js,python,cpp,dart,kotlin,bash&theme=dark" alt="HTML, CSS, JavaScript, Python, C++, Dart, Kotlin and Bash" />
-</p>
+<div align="center">
 
-**Android Development**
+## 🏆 GitHub Trophies
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=androidstudio,flutter&theme=dark" alt="Android Studio and Flutter" />
-</p>
-
-**Development Tools**
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=git,github,vscode&theme=dark" alt="Git, GitHub and VS Code" />
-</p>
+<img src="https://github-profile-trophy.vercel.app/?username=rh-fatur&theme=radical&no-frame=false&no-bg=true&margin-w=4" alt="GitHub Trophies" />
 
 </div>
 
 <div align="center">
 
-## Currently Learning 📚
-
-- Development Workflow with VSCode
-- Android Modding
-- UI/UX Designer
-- Website Development
-- MiniGame Development
-- Roblox Studio
-
-</div>
-
-<div align="center">
-
-## GitHub Statistics 📊
+## 📊 GitHub Statistics
 
 <p align="center">
-  <img src="https://github-readme-stats.shion.dev/api?username=rh-fatur&theme=dark&hide_border=false&include_all_commits=false&count_private=false" />
-  <br/>
-  <img src="https://streak-stats.demolab.com/?user=rh-fatur&theme=dark&hide_border=false" />
-  <br/>
-  <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=rh-fatur&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" />
+  <img src="https://github-readme-stats.shion.dev/api?username=rh-fatur&theme=radical&hide_border=false&include_all_commits=true&count_private=true&show_icons=true" width="48%" />
+  <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=rh-fatur&theme=radical&hide_border=false&include_all_commits=true&count_private=true&layout=compact" width="48%" />
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=rh-fatur&theme=radical&hide_border=false" width="100%" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rh-fatur&theme=react-dark&bg_color=141321&hide_border=false&line=fe428e&point=f8d847" width="100%" />
 </p>
 
 </div>
@@ -117,7 +110,7 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
 <div align="center">
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/rh-fatur/rh-fatur/output/pacman-contribution-graph.svg" width="100%" alt="Pac-Man contribution graph animation" />
+  <img src="https://raw.githubusercontent.com/rh-fatur/rh-fatur/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Game Contribution Graph" />
 </p>
 
 *“Creating, experimenting, and improving — one line at a time.”*
