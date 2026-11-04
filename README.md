@@ -90,14 +90,9 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
 
 ## 📊 GitHub Statistics
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rh-fatur&theme=radical&hide_border=false&include_all_commits=true&count_private=true&show_icons=true" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rh-fatur&theme=radical&hide_border=false&include_all_commits=true&count_private=true&layout=compact" width="48%" />
-</p>
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com/?user=rh-fatur&theme=radical&hide_border=false" width="100%" />
-</p>
+![](https://github-readme-stats.shion.dev/api?username=rh-fatur&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
+![](https://streak-stats.demolab.com/?user=rh-fatur&theme=dark&hide_border=false)<br/>
+![](https://github-readme-stats.shion.dev/api/top-langs/?username=rh-fatur&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
 </div>
 
