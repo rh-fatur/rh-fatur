@@ -28,7 +28,7 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
 
 <br>
 
-**🌐 Languages:**
+**🌐 Languages:** <br>
 🇮🇩 Indonesian (Native) • 🇮🇩 Sundanese (Conversational) • 🇺🇸 English (Learning) • 🇯🇵 Japanese (Beginner)
 
 </div>
@@ -82,7 +82,7 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
 
 ## 🏆 GitHub Trophies
 
-<img src="https://github-profile-trophy.vercel.app/?username=rh-fatur&theme=radical&no-frame=false&no-bg=true&margin-w=4" alt="GitHub Trophies" />
+<img src="https://github-profile-trophy.vercel.app/?username=rh-fatur&theme=radical&no-frame=true&no-bg=false&margin-w=15&row=1&column=7" alt="GitHub Trophies" />
 
 </div>
 
@@ -91,16 +91,12 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
 ## 📊 GitHub Statistics
 
 <p align="center">
-  <img src="https://github-readme-stats.shion.dev/api?username=rh-fatur&theme=radical&hide_border=false&include_all_commits=true&count_private=true&show_icons=true" width="48%" />
-  <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=rh-fatur&theme=radical&hide_border=false&include_all_commits=true&count_private=true&layout=compact" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=rh-fatur&theme=radical&hide_border=false&include_all_commits=true&count_private=true&show_icons=true" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rh-fatur&theme=radical&hide_border=false&include_all_commits=true&count_private=true&layout=compact" width="48%" />
 </p>
 
 <p align="center">
   <img src="https://streak-stats.demolab.com/?user=rh-fatur&theme=radical&hide_border=false" width="100%" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rh-fatur&theme=react-dark&bg_color=141321&hide_border=false&line=fe428e&point=f8d847" width="100%" />
 </p>
 
 </div>
@@ -108,6 +104,8 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
 ---
 
 <div align="center">
+
+## 🐍 Contribution Graph
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/rh-fatur/rh-fatur/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Game Contribution Graph" />
