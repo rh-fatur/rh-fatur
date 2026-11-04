@@ -79,23 +79,24 @@ I'm a Software Engineering (RPL) student based in Indonesia, passionate about cr
 </div>
 
 <div align="center">
+<div align="center">
 
 ## 📊 GitHub Statistics
 
-<table border="0" cellspacing="0" cellpadding="0" align="center">
+<table border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td align="center" valign="top">
-      <img src="https://github-readme-stats.shion.dev/api?username=rh-fatur&bg_color=0D1117&title_color=FFFFFF&text_color=8B949E&icon_color=FFFFFF&border_color=30363D&show_icons=true&hide_border=false&include_all_commits=false&count_private=false" width="400" alt="Fatur's GitHub Stats" />
+      <img src="https://github-readme-stats.shion.dev/api?username=rh-fatur&bg_color=0D1117&title_color=FFFFFF&text_color=8B949E&icon_color=FFFFFF&border_color=30363D&show_icons=true&hide_border=false" width="380" height="170" alt="Fatur's GitHub Stats" />
     </td>
     <td align="center" valign="top">
-      <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=rh-fatur&bg_color=0D1117&title_color=FFFFFF&text_color=8B949E&border_color=30363D&hide_border=false&include_all_commits=false&count_private=false&layout=compact" width="400" alt="Top Languages" />
+      <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=rh-fatur&bg_color=0D1117&title_color=FFFFFF&text_color=8B949E&border_color=30363D&hide_border=false&layout=compact" width="380" height="170" alt="Top Languages" />
     </td>
   </tr>
 </table>
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com/?user=rh-fatur&background=0D1117&border=30363D&stroke=30363D&ring=FFFFFF&fire=FFFFFF&currStreakNum=FFFFFF&sideNums=FFFFFF&currStreakLabel=8B949E&sideLabels=8B949E&dates=8B949E" width="100%" alt="GitHub Streak Stats" />
-</p>
+<br>
+
+<img src="https://streak-stats.demolab.com/?user=rh-fatur&background=0D1117&border=30363D&stroke=30363D&ring=FFFFFF&fire=FFFFFF&currStreakNum=FFFFFF&sideNums=FFFFFF&currStreakLabel=8B949E&sideLabels=8B949E&dates=8B949E" width="100%" max-width="770" alt="GitHub Streak Stats" />
 
 </div>
 
