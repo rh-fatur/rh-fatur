@@ -105,11 +105,11 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
 
 <div align="center">
 
-## 🐍 Contribution Graph
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/rh-fatur/rh-fatur/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Game Contribution Graph" />
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rh-fatur/rh-fatur/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rh-fatur/rh-fatur/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/rh-fatur/rh-fatur/output/pacman-contribution-graph.svg">
+</picture>
 
 *“Creating, experimenting, and improving — one line at a time.”*
 
