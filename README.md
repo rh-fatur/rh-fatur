@@ -12,6 +12,8 @@
 
 ---
 
+<div align="center">
+
 ## About Me
 
 I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX Design, Android Modding, and Software Development.
@@ -22,6 +24,10 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
 - 💻 Experimenting with different programming languages and tools
 - 🌱 Always curious about Tech things 
 
+</div>
+
+<div align="center">
+
 ## Languages 🌐
 
 - 🇮🇩 Indonesian — Native
@@ -29,22 +35,30 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
 - 🇺🇸 English (US) — Learning / using
 - 🇯🇵 Japanese — Beginner, still learning
 
+</div>
+
+<div align="center">
+
 ## Connect With Me 🔗
 
-<p>
+<p align="center">
   <a href="https://instagram.com/rh.faturr"><img src="https://img.shields.io/badge/Instagram-rh.faturr-0D1117?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
   <a href="https://t.me/rizzhold"><img src="https://img.shields.io/badge/Telegram-rizzhold-0D1117?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
   <a href="https://rhfaturr.github.io/FRPortfolio/"><img src="https://img.shields.io/badge/Portfolio-Visit-0D1117?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" /></a>
   <img src="https://img.shields.io/badge/Discord-rh.fatur-0D1117?style=for-the-badge&logo=discord&logoColor=white" alt="Discord: rh.fatur" />
 </p>
 
-// Discord is shown as a username badge because a username alone is not a reliable profile URL.
+*// Discord is shown as a username badge because a username alone is not a reliable profile URL.*
+
+</div>
+
+<div align="center">
 
 ## Technologies & Tools 🔧
 
 **Design & Creative Tools**
 
-<p>
+<p align="center">
   <img src="https://img.shields.io/badge/Figma-0D1117?style=flat-square&logo=figma&logoColor=white" alt="Figma" />
   <img src="https://img.shields.io/badge/Canva-0D1117?style=flat-square&logo=canva&logoColor=white" alt="Canva" />
   <img src="https://img.shields.io/badge/Alight_Motion-0D1117?style=flat-square&logoColor=white" alt="Alight Motion" />
@@ -53,21 +67,25 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
 
 **Programming Languages**
 
-<p>
+<p align="center">
   <img src="https://skillicons.dev/icons?i=html,css,js,python,cpp,dart,kotlin,bash&theme=dark" alt="HTML, CSS, JavaScript, Python, C++, Dart, Kotlin and Bash" />
 </p>
 
 **Android Development**
 
-<p>
+<p align="center">
   <img src="https://skillicons.dev/icons?i=androidstudio,flutter&theme=dark" alt="Android Studio and Flutter" />
 </p>
 
 **Development Tools**
 
-<p>
+<p align="center">
   <img src="https://skillicons.dev/icons?i=git,github,vscode&theme=dark" alt="Git, GitHub and VS Code" />
 </p>
+
+</div>
+
+<div align="center">
 
 ## Currently Learning 📚
 
@@ -78,11 +96,21 @@ I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX
 - MiniGame Development
 - Roblox Studio
 
+</div>
+
+<div align="center">
+
 ## GitHub Statistics 📊
 
-![](https://github-readme-stats.shion.dev/api?username=rh-fatur&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
-![](https://streak-stats.demolab.com/?user=rh-fatur&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.shion.dev/api/top-langs/?username=rh-fatur&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
+<p align="center">
+  <img src="https://github-readme-stats.shion.dev/api?username=rh-fatur&theme=dark&hide_border=false&include_all_commits=false&count_private=false" />
+  <br/>
+  <img src="https://streak-stats.demolab.com/?user=rh-fatur&theme=dark&hide_border=false" />
+  <br/>
+  <img src="https://github-readme-stats.shion.dev/api/top-langs/?username=rh-fatur&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" />
+</p>
+
+</div>
 
 ---
 
