@@ -14,31 +14,31 @@
 
 ## About Me
 
-I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX Design, Android customization, and software development.
+I'm a Software Engineering (RPL) student based in Indonesia, interested in UI/UX Design, Android Modding, and Software Development.
 
 - 🎨 Interested in clean and intuitive visual design
-- 📱 Exploring Android customization, custom ROMs, and system tweaks
+- 📱 Developing Android Modder, like Porting, and Magisk Modules
 - ✍️ Enjoy writing, creating visual designs, and making tech content
 - 💻 Experimenting with different programming languages and tools
-- 🌱 Always curious about how things work
+- 🌱 Always curious about Tech things 
 
 ## Languages
 
-- Indonesian — Native
-- Sundanese — Conversational
-- English (US) — Learning / using
-- Japanese — Beginner, still learning
+- 🇮🇩 Indonesian — Native
+- 🇮🇩 Sundanese — Conversational
+- 🇺🇸 English (US) — Learning / using
+- 🇯🇵 Japanese — Beginner, still learning
 
 ## Connect With Me
 
 <p>
   <a href="https://instagram.com/rh.faturr"><img src="https://img.shields.io/badge/Instagram-rh.faturr-0D1117?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
   <a href="https://t.me/rizzhold"><img src="https://img.shields.io/badge/Telegram-rizzhold-0D1117?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
-  <a href="https://rhfaturr.github.io/My-Portfolio/"><img src="https://img.shields.io/badge/Portfolio-Visit-0D1117?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" /></a>
+  <a href="https://rhfaturr.github.io/FRPortfolio/"><img src="https://img.shields.io/badge/Portfolio-Visit-0D1117?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" /></a>
   <img src="https://img.shields.io/badge/Discord-rh.fatur-0D1117?style=for-the-badge&logo=discord&logoColor=white" alt="Discord: rh.fatur" />
 </p>
 
-> Discord is shown as a username badge because a username alone is not a reliable profile URL.
+// Discord is shown as a username badge because a username alone is not a reliable profile URL.
 
 ## Technologies & Tools
 
