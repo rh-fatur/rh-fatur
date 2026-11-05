@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>FRPortfolio - Personal Portfolio</title>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader" class="loader-screen">
+        <h1 id="loader-greeting" class="loader-greeting">Hello!</h1>
+        <p class="loader-subtitle">Welcome to My Portfolio</p>
+        <div class="loader-line-container">
+            <div id="loader-bar" class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Floating Navbar dengan Sliding Pill Indicator (Tanpa Menu Contacts) -->
+    <header class="navbar">
+        <a href="#home" class="nav-logo">Portfolio.</a>
+        <nav class="nav-links" id="nav-links-container">
+            <div id="nav-dock" class="nav-dock"></div>
+            
+            <a href="#home" class="nav-item active" data-target="home">Home</a>
+            <a href="#about" class="nav-item" data-target="about">About</a>
+            <a href="#skills" class="nav-item" data-target="skills">Skills</a>
+            <a href="#experience" class="nav-item" data-target="experience">Experience</a>
+            <a href="#projects" class="nav-item" data-target="projects">Projects</a>
+        </nav>
+        <div class="nav-actions">
+            <button id="theme-toggle" class="theme-btn" aria-label="Ganti Tema">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button id="sound-toggle" class="theme-btn sound-btn" aria-label="Nyalakan / matikan suara" aria-pressed="true">
+                <svg class="icon-on" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+                <svg class="icon-off" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <h1>Hi, I'm Fatur <span class="aka">a.k.a rizzhold</span></h1>
+                <h2 class="hero-subtitle"><span id="typing-text"></span><span class="cursor">|</span></h2>
+                <p>Halo! Perkenalkan, Nama saya Muhamad Fatur Rahman, biasa dipanggil Fatur.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">Explore Work &rarr;</a>
+                    <!-- Tombol Baru: Membuka Pop-up About Portfolio -->
+                    <button id="about-portfolio-btn" class="btn-outline">
+                        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        About Portfolio
+                    </button>
+                </div>
+                <div class="connect-box">
+                    <span>CONNECT</span>
+                    <div class="divider"></div>
+                    <a href="https://github.com/rh-fatur" target="_blank" aria-label="GitHub" title="GitHub">
+                        <svg class="silhouette-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <a href="https://www.instagram.com/rh.faturr" target="_blank" aria-label="Instagram" title="Instagram">
+                        <svg class="silhouette-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image-container">
+                <div class="profile-card">
+                    <img src="assets/profile/profile.jpg" alt="Fatur Photo" class="profile-img" onerror="this.style.display='none';">
+                </div>
+                <div class="badges-stack">
+                    <div class="badge-card">
+                        <div class="icon-box" style="--icon-color: #3DDC84; --icon-glow: rgba(61, 220, 132, 0.25);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                        </div>
+                        <span>Android Modding</span>
+                    </div>
+                    <div class="badge-card">
+                        <div class="icon-box" style="--icon-color: #60A5FA; --icon-glow: rgba(96, 165, 250, 0.25);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                        </div>
+                        <span>Writer</span>
+                    </div>
+                    <div class="badge-card" id="rotating-badge">
+                        <div class="icon-box" style="--icon-color: #F472B6; --icon-glow: rgba(244, 114, 182, 0.25);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </div>
+                        <span>Linguistics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="section reveal">
+        <div class="section-header">
+            <h2 class="typewriter-title" data-title="About Me"></h2>
+            <p>Mengenal lebih dekat siapa di balik baris kode.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-img-box">
+                <img src="assets/profile/about_profile.jpg" alt="About Fatur" class="about-img" onerror="this.style.display='none';">
+            </div>
+            <div class="about-text-boxes">
+                <div class="card">
+                    <h3>Who Am I</h3>
+                    <p>Saya seorang pelajar Software Engineering yang berfokus pada menciptakan tampilan dan pengalaman pengguna yang sederhana, cepat, dan fungsional.</p>
+                </div>
+                <div class="card">
+                    <h3>My Approach</h3>
+                    <p>Saya mengutamakan clean code, desain responsif, dan pengalaman pengguna yang intuitif dalam setiap proyek yang saya kerjakan.</p>
+                </div>
+                <div class="card details-card">
+                    <div class="details-header">
+                        <h3 class="personal-details-title">Personal Details</h3>
+                        <h3></h3>
+                    </div>
+                    <div class="details-grid-4">
+                        <div>
+                            <span class="label">Full Name</span>
+                            <span class="value">Muhamad Fatur Rahman</span>
+                        </div>
+                        <div>
+                            <span class="label">Place of Birth</span>
+                            <span class="value">Bogor, Indonesia</span>
+                        </div>
+                        <div>
+                            <span class="label">School</span>
+                            <span class="value">-</span>
+                        </div>
+                        <div>
+                            <span class="label">Class</span>
+                            <span class="value">-</span>
+                        </div>
+                        <div>
+                            <span class="label">Organization</span>
+                            <span class="value">Duta Literasi</span>
+                        </div>
+                        <div>
+                            <span class="label">Extracurricular</span>
+                            <span class="value">Japanese Indonesia Club (JIC)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Tech Stack Section -->
+    <section id="skills" class="section reveal">
+        <div class="section-header">
+            <h2 class="typewriter-title" data-title="My Tech Stack"></h2>
+            <p>Teknologi dan tools yang biasa saya gunakan sehari-hari.</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category-card card">
+                <h3>Frontend Development</h3>
+                <div class="skills-chips">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript (ES6+)</span>
+                    <span>Tailwind CSS</span>
+                </div>
+            </div>
+            <div class="skill-category-card card">
+                <h3>Tools & Version Control</h3>
+                <div class="skills-chips">
+                    <span>Git & GitHub</span>
+                    <span>VS Code</span>
+                    <span>Android Studio</span>
+                    <span>Terminal / CLI</span>
+                </div>
+            </div>
+            <div class="skill-category-card card">
+                <h3>Modding & Other Hobbies</h3>
+                <div class="skills-chips">
+                    <span>OEM ROM Porting</span>
+                    <span>Markdown Writing</span>
+                    <span>Linguistics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Banner -->
+    <div class="marquee-container reveal">
+        <div class="marquee-track">
+            <span>rizzhold &bull; Fullstack Web Developer &bull; rizzhold &bull; Fullstack Web Developer &bull;</span>
+            <span>rizzhold &bull; Fullstack Web Developer &bull; rizzhold &bull; Fullstack Web Developer &bull;</span>
+        </div>
+    </div>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="section reveal">
+        <div class="section-header">
+            <h2 class="typewriter-title" data-title="Work Experience"></h2>
+            <p>Jejak pengalaman, kolaborasi, dan eksplorasi proyek.</p>
+        </div>
+        <div class="timeline-zigzag" id="timeline-container">
+            <div class="timeline-line"></div>
+            <div class="timeline-progress-line" id="timeline-progress"></div>
+            <div id="timelineRows">
+                <!-- Baris timeline di-generate otomatis oleh assets/data/pages/js/experience-render.js dari EXPERIENCE_DATA -->
+            </div>
+        </div>
+    </section>
+
+<!-- Project Section -->
+<section id="projects" class="section reveal">
+    <!-- ==== Preview: nampilin project terbatas ==== -->
+    <div class="projects-view projects-view-preview" id="projectsPreviewView">
+        <div class="section-header">
+            <h2 class="typewriter-title" data-title="My Projects"></h2>
+            <p>Beberapa proyek unggulan yang pernah dikerjakan.</p>
+        </div>
+        <div class="projects-grid" id="projectsPreviewGrid">
+            <!-- Card preview (dibatasi) di-generate otomatis oleh assets/data/pages/js/projects-render.js -->
+        </div>
+        <div class="projects-view-more-area">
+            <button type="button" class="view-all-btn" id="viewMoreProjectsBtn">View More Projects</button>
+        </div>
+    </div>
+
+    <!-- ==== Full: nampilin semua project ==== -->
+    <div class="projects-view projects-view-full" id="projectsFullView" hidden>
+        <div class="section-header">
+            <h2>All Projects</h2>
+            <p>Semua proyek yang pernah dikerjakan.</p>
+        </div>
+        <div class="projects-grid" id="projectsFullGrid">
+            <!-- Semua card di-generate otomatis oleh assets/data/pages/js/projects-render.js -->
+        </div>
+        <div class="projects-view-more-area">
+            <button type="button" class="view-all-btn" id="backToProjectsBtn">Back</button>
+        </div>
+    </div>
+</section>
+
+    <!-- ABOUT PORTFOLIO MODAL POP-UP -->
+    <div id="portfolio-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <button id="modal-close-btn" class="modal-close-btn" aria-label="Tutup">&times;</button>
+                <h3>ABOUT PORTFOLIO</h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h4>
+                        <svg class="silhouette-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 6px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        Fungsi Website
+                    </h4>
+                    <p>Website ini dibuat sebagai media portofolio pribadi untuk mendokumentasikan proyek-proyek yang pernah dikerjakan, baik di bidang web development maupun Android Custom ROM porting, sekaligus menjadi sarana belajar dan bereksperimen dengan teknologi baru.</p>
+                </div>
+                <div class="modal-section">
+                    <h4>
+                        <svg class="silhouette-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 6px;"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        Built With (Tech Stack)
+                    </h4>
+                    <p>Dibangun menggunakan HTML5, CSS3, dan JavaScript (ES6+) murni tanpa framework berat demi performa yang sangat cepat dan ringan.</p>
+                </div>
+                <div class="modal-section">
+                    <h4>
+                        <svg class="silhouette-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 6px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        Key Features
+                    </h4>
+                    <ul>
+                        <li><strong>Dynamic Sliding Pill Navbar:</strong> Navigasi melayang interaktif.</li>
+                        <li><strong>Multilingual Loader:</strong> Sapaan pembuka dalam berbagai bahasa.</li>
+                        <li><strong>Dark & Light Theme:</strong> Dilengkapi efek transisi *ripple*.</li>
+                        <li><strong>Scroll Reveal & Blur:</strong> Transisi kemunculan elemen yang halus.</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h4>
+                        <svg class="silhouette-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 6px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        Changelog & Updates
+                    </h4>
+                    <div class="changelog-dock" id="changelogDock">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Footer / Contacts -->
+    <footer id="contacts" class="reveal">
+        <p>GitHub: rh-fatur:</p>
+        <p style="margin-top: 8px;">&copy; 2026 FRPortfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Logic Script -->
+    <script src="assets/js/init.js"></script>
+
+    <!-- Changelogs - About Portfolio Modal -->
+    <script src="assets/js/data/changelog/v1-0.js"></script>
+    <script src="assets/js/data/changelog/v1-1.js"></script>
+    <script src="assets/js/data/changelog/v2-0.js"></script>
+
+    <!-- Work Experience -->
+    <script src="assets/js/data/experience/web-dev-portfolio.js"></script>
+    <script src="assets/js/data/experience/android-rom-porter.js"></script>
+
+    <!-- My Projects -->
+    <script src="assets/js/data/projects/nine-portfolio.js"></script>
+    <script src="assets/js/data/projects/smk-fiktif.js"></script>
+    <script src="assets/js/data/projects/dummy-project.js"></script>
+    
+    <!-- Sound Effects -->
+    <script src="assets/js/soundfx.js"></script>
+
+    <!-- Main Scripts -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

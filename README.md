@@ -1,6 +1,8 @@
+## FRPortfolio - Digital Web Portfolio
+
 <div align="center">
 
-<img src="./assets/heading.jpg" width="100%" alt="Monochrome samurai artwork" />
+<img src="./assets/pictures/heading.jpg" width="100%" alt="Monochrome samurai artwork" />
 
 ## Hi, I'm Fatur 👋
 
