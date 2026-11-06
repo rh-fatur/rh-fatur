@@ -49,7 +49,6 @@ window.addEventListener('load', () => {
 // Dynamic Sliding Pill Navbar Indicator
 const navItems = document.querySelectorAll('.nav-item');
 const navDock = document.getElementById('nav-dock');
-const navLinksContainer = document.getElementById('nav-links-container');
 
 function updateDockPosition(activeElement) {
     if (!activeElement || !navDock) return;
@@ -65,140 +64,23 @@ window.addEventListener('DOMContentLoaded', () => {
     updateDockPosition(activeItem);
 });
 
-let dragMoved = false; // penanda gesture terakhir itu drag dock, bukan klik biasa
-
 navItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-        if (dragMoved) {
-            // Gesture terakhir adalah drag dock (bukan klik biasa) -> abaikan,
-            // karena state active & scroll udah ke-handle sama logic drag di bawah.
-            dragMoved = false;
-            e.preventDefault();
-            return;
-        }
+    item.addEventListener('click', () => {
         navItems.forEach(nav => nav.classList.remove('active'));
         item.classList.add('active');
         updateDockPosition(item);
     });
 });
 
-// ==========================================================
-// FITUR: Drag/Geser Dock Navigasi (ala Liquid Glass Apple)
-// Dock hitam bisa disentuh & digeser, halaman ikut pindah
-// section mengikuti item terdekat yang dilewati dock saat drag.
-// ==========================================================
-if (navDock && navLinksContainer) {
-    let isDragging = false;
-    let dockStartX = 0;
-    let dockStartLeft = 0;
-    let dragWidth = 0;
-    let lastActiveIndex = -1;
-
-    function getNavItemPositions() {
-        return Array.from(navItems).map((item, index) => ({
-            item,
-            index,
-            left: item.offsetLeft,
-            width: item.offsetWidth,
-            center: item.offsetLeft + item.offsetWidth / 2
-        }));
-    }
-
-    function getClosestNavItem(dockCenterX, positions) {
-        let closest = positions[0];
-        let minDist = Infinity;
-        positions.forEach(pos => {
-            const dist = Math.abs(pos.center - dockCenterX);
-            if (dist < minDist) {
-                minDist = dist;
-                closest = pos;
-            }
-        });
-        return closest;
-    }
-
-    function setActiveNavItemWhileDragging(targetItem) {
-        navItems.forEach(nav => nav.classList.remove('active'));
-        targetItem.classList.add('active');
-        if (window.SoundFX) window.SoundFX.play('navClick');
-        const targetId = targetItem.getAttribute('data-target');
-        const section = document.getElementById(targetId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }
-
-    navLinksContainer.addEventListener('pointerdown', (e) => {
-        const target = e.target.closest('.nav-item');
-        // Cuma mulai drag kalau yang disentuh itu item yang LAGI AKTIF
-        // (area itu yang secara visual ditempati dock hitam).
-        if (!target || !target.classList.contains('active')) return;
-
-        isDragging = true;
-        dragMoved = false;
-        navDock.classList.add('dragging');
-        navLinksContainer.classList.add('dock-dragging');
-        navLinksContainer.setPointerCapture(e.pointerId);
-
-        dockStartX = e.clientX;
-        // Posisi awal = posisi item aktif. (navDock.offsetLeft selalu 0 karena
-        // dock digeser pakai transform, sehingga dock sempat "melompat" ke kiri.)
-        dockStartLeft = target.offsetLeft;
-        dragWidth = navDock.offsetWidth;
-
-        const positions = getNavItemPositions();
-        lastActiveIndex = positions.findIndex(p => p.item === target);
-
-        e.preventDefault();
+// Ukuran item bisa berubah setelah font selesai dimuat -> posisikan ulang pill dock
+if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+        updateDockPosition(document.querySelector('.nav-item.active'));
     });
-
-    navLinksContainer.addEventListener('pointermove', (e) => {
-        if (!isDragging) return;
-
-        const deltaX = e.clientX - dockStartX;
-        if (Math.abs(deltaX) > 3) {
-            dragMoved = true;
-        }
-
-        // Batas geser: dari tepi kiri item pertama sampai tepi kanan item terakhir
-        // (memperhitungkan padding dock di tampilan mobile).
-        const firstItem = navItems[0];
-        const lastItem = navItems[navItems.length - 1];
-        const minLeft = firstItem.offsetLeft;
-        const maxLeft = lastItem.offsetLeft + lastItem.offsetWidth - dragWidth;
-        let newLeft = dockStartLeft + deltaX;
-        newLeft = Math.max(minLeft, Math.min(newLeft, maxLeft));
-
-        navDock.style.transform = `translateX(${newLeft}px)`;
-
-        const positions = getNavItemPositions();
-        const dockCenterX = newLeft + dragWidth / 2;
-        const closest = getClosestNavItem(dockCenterX, positions);
-
-        // Cuma ganti section aktif & scroll kalau item terdekat BERUBAH
-        // (biar gak scroll berkali-kali tiap pixel gerak).
-        if (closest.index !== lastActiveIndex) {
-            lastActiveIndex = closest.index;
-            setActiveNavItemWhileDragging(closest.item);
-        }
-    });
-
-    function endDockDrag() {
-        if (!isDragging) return;
-        isDragging = false;
-        navDock.classList.remove('dragging');
-        navLinksContainer.classList.remove('dock-dragging');
-
-        // Snap dock pas ke posisi & lebar item aktif terakhir
-        const activeItem = document.querySelector('.nav-item.active');
-        if (activeItem) {
-            updateDockPosition(activeItem);
-        }
-    }
-
-    navLinksContainer.addEventListener('pointerup', endDockDrag);
-    navLinksContainer.addEventListener('pointercancel', endDockDrag);
 }
+window.addEventListener('load', () => {
+    updateDockPosition(document.querySelector('.nav-item.active'));
+});
 
 // Penanganan perpindahan halaman aktif berdasarkan Scroll (Tanpa Contacts)
 const sections = document.querySelectorAll('#home, #about, #skills, #experience, #projects');
@@ -411,51 +293,185 @@ document.querySelectorAll('.reveal').forEach(el => {
     observer.observe(el);
 });
 
-// Fitur Ganti Tema
-const themeToggle = document.getElementById('theme-toggle');
-const sunIcon = themeToggle.querySelector('.sun-icon');
-const moonIcon = themeToggle.querySelector('.moon-icon');
+// Fitur Ganti Tema (pilihan Terang / Gelap ada di panel hamburger)
+const themeOptionBtns = document.querySelectorAll('[data-theme-option]');
 
-themeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    const rect = themeToggle.getBoundingClientRect();
+function currentTheme() {
+    return document.documentElement.getAttribute('data-theme') || 'light';
+}
+
+function syncThemeUI(theme) {
+    themeOptionBtns.forEach(btn => {
+        btn.setAttribute('aria-pressed', String(btn.dataset.themeOption === theme));
+    });
+}
+
+function applyTheme(targetTheme, originEl) {
+    if (targetTheme === currentTheme()) return;
+    if (window.SoundFX) window.SoundFX.play('themeToggle');
+
+    const rect = originEl.getBoundingClientRect();
     const x = rect.left + rect.width / 2;
     const y = rect.top + rect.height / 2;
 
+    // Lingkaran membesar dari tombol sampai menutup seluruh layar
+    const radius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
     const ripple = document.createElement('div');
     ripple.classList.add('theme-ripple');
-    ripple.style.left = `${x}px`;
-    ripple.style.top = `${y}px`;
-    ripple.style.backgroundColor = targetTheme === 'dark' ? '#0f172a' : '#ffffff';
+    ripple.style.width = ripple.style.height = `${radius * 2}px`;
+    ripple.style.left = `${x - radius}px`;
+    ripple.style.top = `${y - radius}px`;
+    ripple.style.backgroundColor = targetTheme === 'dark' ? '#0f172a' : '#f5f6fa';
     document.body.appendChild(ripple);
 
+    // Ganti tema saat layar sudah hampir tertutup, lalu lingkaran memudar
+    // (supaya background gradasi tema baru muncul halus, tanpa kedipan).
     setTimeout(() => {
         document.documentElement.setAttribute('data-theme', targetTheme);
-        if (targetTheme === 'dark') {
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'block';
-        } else {
-            sunIcon.style.display = 'block';
-            moonIcon.style.display = 'none';
-        }
+        syncThemeUI(targetTheme);
         const activeItem = document.querySelector('.nav-item.active');
         if (activeItem) updateDockPosition(activeItem);
-    }, 300);
+    }, 470);
+
+    setTimeout(() => {
+        ripple.style.transition = 'opacity 0.35s ease';
+        ripple.style.opacity = '0';
+    }, 500);
 
     setTimeout(() => {
         ripple.remove();
-    }, 650);
-});
+    }, 900);
+}
 
-// LOGIKA MODAL POP-UP ABOUT PORTFOLIO
+themeOptionBtns.forEach(btn => {
+    btn.addEventListener('click', () => applyTheme(btn.dataset.themeOption, btn));
+});
+syncThemeUI(currentTheme());
+
+// HAMBURGER MENU: tombol bulat yang berubah (morph) jadi panel pengaturan
+const menuWrap = document.getElementById('menu-wrap');
+const menuBtn = document.getElementById('menu-toggle');
+const menuContent = document.getElementById('menu-content');
+
+function setMenu(open) {
+    if (!menuWrap || !menuBtn || !menuContent) return;
+    menuWrap.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Tutup menu pengaturan' : 'Buka menu pengaturan');
+    menuContent.inert = !open;
+    if (open) {
+        // tinggi panel = tinggi isi (+2px border), supaya animasi height punya target pasti
+        menuWrap.style.setProperty('--menu-h', `${menuContent.offsetHeight + 2}px`);
+    }
+}
+
+if (menuWrap && menuBtn && menuContent) {
+    menuBtn.addEventListener('click', () => {
+        setMenu(!menuWrap.classList.contains('open'));
+    });
+
+    // Tutup kalau menyentuh di luar panel atau menekan Esc
+    document.addEventListener('pointerdown', (e) => {
+        if (menuWrap.classList.contains('open') && !menuWrap.contains(e.target)) setMenu(false);
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menuWrap.classList.contains('open')) {
+            setMenu(false);
+            menuBtn.focus();
+        }
+    });
+}
+
+// KONTROL VOLUME SOUNDFX
+// Slider ini memanggil window.SoundFX.setVolume(0..1) bila tersedia.
+// Nilai terakhir disimpan di localStorage agar persisten antar sesi.
+const volumeSlider = document.getElementById('volume-slider');
+const volumeValue = document.getElementById('volume-value');
+
+function applyVolumeUI(rawValue) {
+    const v = Math.max(0, Math.min(100, Number(rawValue) || 0));
+    if (volumeValue) volumeValue.textContent = `${v}%`;
+    if (volumeSlider) {
+        volumeSlider.value = v;
+        volumeSlider.style.setProperty('--vol-pct', `${v}%`);
+        volumeSlider.setAttribute('aria-valuetext', `${v}%`);
+    }
+    if (window.SoundFX && typeof window.SoundFX.setVolume === 'function') {
+        window.SoundFX.setVolume(v / 100);
+    }
+}
+
+if (volumeSlider) {
+    // Restore dari localStorage
+    try {
+        const savedVol = localStorage.getItem('portfolio:volume');
+        if (savedVol !== null && savedVol !== '' && !Number.isNaN(Number(savedVol))) {
+            volumeSlider.value = Number(savedVol);
+        }
+    } catch (err) { /* private mode: abaikan */ }
+
+    volumeSlider.addEventListener('input', () => {
+        applyVolumeUI(volumeSlider.value);
+        try {
+            localStorage.setItem('portfolio:volume', volumeSlider.value);
+        } catch (err) { /* abaikan */ }
+    });
+
+    applyVolumeUI(volumeSlider.value);
+
+    // Re-apply setelah semua resource selesai (jaga-jaga bila SoundFX di-init belakangan)
+    window.addEventListener('load', () => {
+        applyVolumeUI(volumeSlider.value);
+    });
+}
+
+// LOGIKA MODAL POP-UP ABOUT PORTFOLIO (bertab)
 const aboutPortfolioBtn = document.getElementById('about-portfolio-btn');
 const portfolioModal = document.getElementById('portfolio-modal');
 const modalCloseBtn = document.getElementById('modal-close-btn');
 
+const modalTabs = Array.from(document.querySelectorAll('.modal-tab'));
+const modalPanels = Array.from(document.querySelectorAll('.modal-panel'));
+const modalTabIndicator = document.getElementById('modal-tab-indicator');
+const modalBody = document.querySelector('#portfolio-modal .modal-body');
+
+function moveTabIndicator(tab) {
+    if (!tab || !modalTabIndicator) return;
+    modalTabIndicator.style.transform = `translateX(${tab.offsetLeft}px)`;
+    modalTabIndicator.style.width = `${tab.offsetWidth}px`;
+}
+
+function selectModalTab(tab, focus) {
+    modalTabs.forEach(t => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+    });
+    modalPanels.forEach(panel => {
+        panel.hidden = panel.dataset.panel !== tab.dataset.tab;
+    });
+    if (modalBody) modalBody.scrollTop = 0;
+    moveTabIndicator(tab);
+    if (focus) tab.focus();
+}
+
+modalTabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => selectModalTab(tab));
+    tab.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        const dir = e.key === 'ArrowRight' ? 1 : -1;
+        selectModalTab(modalTabs[(i + dir + modalTabs.length) % modalTabs.length], true);
+    });
+});
+
+window.addEventListener('resize', () => {
+    moveTabIndicator(modalTabs.find(t => t.getAttribute('aria-selected') === 'true'));
+});
+
 if (aboutPortfolioBtn && portfolioModal && modalCloseBtn) {
     aboutPortfolioBtn.addEventListener('click', () => {
+        if (modalTabs[0]) selectModalTab(modalTabs[0]);
         portfolioModal.classList.add('active');
     });
 

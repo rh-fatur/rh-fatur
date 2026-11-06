@@ -1,39 +1,30 @@
 /* SOUND EFFECTS ENGINE. */
 
-
-/* ==================== SOUND EFFECTS ENGINE ==================== */
-
 /* ============================================================
    SOUNDFX.JS — Web Audio Engine · 3 Packs (soft / retro / mecha)
-   ------------------------------------------------------------
-   Menyediakan window.SoundFX:
-     - play(name)          → mainkan efek suara
-     - isEnabled()         → status on/off
-     - setEnabled(bool)    → toggle + persist ke localStorage
-     - getPack()           → pack aktif ('soft' | 'retro' | 'mecha')
-     - setPack(name)       → ganti pack
-     - toggle()            → flip on/off
-     - getAnalyser()       → AnalyserNode (dipakai visualizer dot-matrix)
-
-   Dipakai oleh: terminal, dot-matrix (visualizer), settings panel,
-                 tombol UI, modal, navbar, project cards.
    ============================================================ */
 (function () {
     'use strict';
 
     const KEY_ON   = 'rzh-sound';
-    const KEY_PACK = 'rzh-sound-pack';
-    const DEFAULT_PACK = 'mecha';
+    const KEY_PACK = 'rzh-sound-pack-v2'; // Kunci baru biar reset ke Retro
+    const KEY_VOL  = 'rzh-sound-volume'; 
+    const DEFAULT_PACK = 'retro'; // DEFAULT RETRO
 
     let ctx = null;
     let enabled = true;
     let currentPack = DEFAULT_PACK;
+    let currentVolume = 1.0; // Default 100%
 
     try {
         const savedOn = localStorage.getItem(KEY_ON);
         enabled = savedOn === '0' ? false : true;
+        
         const saved = localStorage.getItem(KEY_PACK);
         if (saved) currentPack = saved;
+
+        const savedVol = localStorage.getItem(KEY_VOL);
+        if (savedVol !== null) currentVolume = parseFloat(savedVol);
     } catch (e) {
         enabled = true;
     }
@@ -48,11 +39,11 @@
         return ctx;
     }
 
-    // Bus keluaran bersama + AnalyserNode (dipakai visualizer dot-matrix)
     let outBus = null, analyser = null;
     function getOut(c) {
         if (!outBus) {
             outBus = c.createGain();
+            outBus.gain.value = currentVolume; 
             try {
                 analyser = c.createAnalyser();
                 analyser.fftSize = 64;
@@ -268,10 +259,8 @@
         }
     };
 
-    // Browser (terutama di HP) memblokir audio sebelum ada interaksi pertama.
-    // Suara baru dimainkan setelah "unlocked", supaya efek yang dijadwalkan saat
-    // AudioContext masih suspended tidak meledak sekaligus di sentuhan pertama.
     let unlocked = false;
+    let pendingWelcome = false;
     const UNLOCK_EVENTS = ['pointerdown', 'touchend', 'click', 'keydown'];
 
     function unlock() {
@@ -279,6 +268,12 @@
         if (!getCtx()) return;
         unlocked = true;
         UNLOCK_EVENTS.forEach(ev => document.removeEventListener(ev, unlock, true));
+        
+        // Kalau user nge-klik pas loading, pas selesai loading langsung bunyi sambutan
+        if (pendingWelcome) {
+            pendingWelcome = false;
+            play('loaderDone');
+        }
     }
     UNLOCK_EVENTS.forEach(ev => document.addEventListener(ev, unlock, true));
 
@@ -296,11 +291,21 @@
         isEnabled: () => enabled,
         getAnalyser: () => analyser,
         getPack: () => currentPack,
+        
+        getVolume: () => currentVolume,
+        setVolume(val) {
+            currentVolume = Math.max(0, Math.min(1, val));
+            if (outBus && ctx) {
+                outBus.gain.setTargetAtTime(currentVolume, ctx.currentTime, 0.05);
+            }
+            try { localStorage.setItem(KEY_VOL, currentVolume); } catch (e) {}
+        },
+
         setEnabled(val) {
             enabled = !!val;
             try { localStorage.setItem(KEY_ON, enabled ? '1' : '0'); } catch (e) {}
             document.documentElement.classList.toggle('sound-on', enabled);
-            const btn = document.getElementById('sound-toggle');
+            const btn = document.getElementById('sound-toggle') || document.getElementById('sound-switch');
             if (btn) btn.setAttribute('aria-pressed', String(enabled));
             if (enabled) {
                 getCtx();
@@ -329,23 +334,14 @@
         };
     }
 
-    // Selector tombol yang dapat suara "buttonHover" / "buttonClick".
-    const BTN_SELECTOR = '.btn-primary, .btn-outline, .view-all-btn, .connect-box a';
+    // Daftar lengkap elemen yang bisa diklik/hover
+    const BTN_SELECTOR = '.btn-primary, .btn-outline, .view-all-btn, .connect-box a, .menu-btn, .modal-tab, .pack-chip, .seg-btn, .project-close-btn, .repo-btn, .launch-btn';
 
     document.addEventListener('DOMContentLoaded', () => {
 
-        // ---- Tombol mute / unmute ----
-        const soundBtn = document.getElementById('sound-toggle');
-        if (soundBtn) {
-            soundBtn.setAttribute('aria-pressed', String(enabled));
-            soundBtn.addEventListener('click', () => window.SoundFX.toggle());
-        }
-
-        // ---- HOVER (hanya mouse; layar sentuh tidak punya hover) ----
-        // Pakai event delegation supaya tombol yang dibuat dinamis
-        // (kartu proyek dari init.js) otomatis ikut dapat suara.
         const navHover = throttle(() => play('navHover'), 70);
         const btnHover = throttle(() => play('buttonHover'), 110);
+        
         document.addEventListener('pointerover', (e) => {
             if (e.pointerType !== 'mouse') return;
             const t = e.target;
@@ -360,29 +356,30 @@
             if (btn && !btn.contains(e.relatedTarget)) btnHover();
         });
 
-        // ---- KLIK / TAP ----
         document.addEventListener('click', (e) => {
             const t = e.target;
             if (!(t instanceof Element)) return;
 
-            // Tombol mute punya feedback sendiri (lihat setEnabled).
-            if (t.closest('#sound-toggle')) return;
+            // Tombol mute punya suara sendiri
+            if (t.closest('#sound-toggle, #sound-switch')) return;
 
-            if (t.closest('#theme-toggle')) { play('themeToggle'); return; }
+            // Suara khusus
+            if (t.closest('[data-theme-option]')) { play('themeToggle'); return; }
             if (t.closest('.nav-item, .nav-logo')) { play('navClick'); return; }
 
-            // Suara sudah ditangani observer di bawah (modalOpen / modalClose / cardFlip).
+            // Dihandle oleh MutationObserver biar nggak dobel
             if (t.closest('#about-portfolio-btn')) return;
-            if (t.closest('.more-btn')) return;
             if (t.closest('.modal-header .modal-close-btn')) return;
+            if (t.closest('.more-btn')) return;
 
-            // Tombol tutup kartu proyek.
-            if (t.closest('.project-close-btn')) { play('buttonClick'); return; }
+            // Semua tombol interaktif lainnya
+            if (t.closest(BTN_SELECTOR)) {
+                play('buttonClick');
+                return;
+            }
+        }, true); 
 
-            if (t.closest(BTN_SELECTOR)) play('buttonClick');
-        }, true); // capture: init.js memanggil stopPropagation() di beberapa tombol kartu
-
-        // ---- Modal About Portfolio: suara buka / tutup ----
+        // --- Modal Observer ---
         const modal = document.getElementById('portfolio-modal');
         if (modal) {
             let prev = false;
@@ -395,12 +392,16 @@
             }).observe(modal, { attributes: true, attributeFilter: ['class'] });
         }
 
-        // ---- Loader selesai ----
+        // --- Welcome Sound Logic ---
         window.addEventListener('portfolio:ready', () => {
-            setTimeout(() => play('loaderDone'), 250);
+            if (unlocked) {
+                play('loaderDone');
+            } else {
+                pendingWelcome = true;
+            }
         });
 
-        // ---- Kartu proyek terbuka (flip) ----
+        // --- Card Flip Observer ---
         document.querySelectorAll('#projectsPreviewGrid, #projectsFullGrid').forEach(grid => {
             new MutationObserver((muts) => {
                 muts.forEach(m => {
@@ -415,7 +416,7 @@
             }).observe(grid, { attributes: true, subtree: true, attributeFilter: ['class'], attributeOldValue: true });
         });
 
-        // ---- Terminal (hanya aktif kalau elemennya ada di halaman) ----
+        // --- Terminal Observer ---
         const termInput = document.getElementById('termInput');
         if (termInput) {
             termInput.addEventListener('keydown', (e) => {

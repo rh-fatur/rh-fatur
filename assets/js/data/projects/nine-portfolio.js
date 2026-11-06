@@ -1,7 +1,7 @@
 PROJECT_DATA.push({
   id: "nine-portfolio",
   name: "Nine Portofolio (PPLG)",
-  image: "assets/banner/nine-portfolio.jpg",
+  image: "assets/images/projects/nine-portfolio.jpg",
   imageAlt: "Nine Portofolio Preview",
   fallbackLabel: "Nine Portofolio",
   fallbackColor: "default",
@@ -13,6 +13,6 @@ PROJECT_DATA.push({
     "Responsive Layout",
     "Interactive UI"
   ],
-  repoUrl: "https://github.com/rizzhold/nine-portofolio",
-  launchUrl: "https://rizzhold.github.io/nine-portofolio"
+  repoUrl: "https://github.com/rh-fatur/nine-portofolio",
+  launchUrl: "https://rh-fatur.github.io/nine-portofolio"
 });

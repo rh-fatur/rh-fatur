@@ -4,9 +4,13 @@ on:
     schedule: # Run automatically every 24 hours
         - cron: '0 0 * * *'
     workflow_dispatch: # Allows manual triggering
-    push: # Runs on every push to the main branch
+    push: # Runs on push to main branch, but ONLY if specific files change
         branches:
             - main
+        paths:
+            - 'README.md'
+            - 'assets/images/readme/**'
+            - '.github/workflows/pacman.yml'
 
 jobs:
     generate:

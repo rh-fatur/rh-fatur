@@ -1,7 +1,7 @@
 PROJECT_DATA.push({
   id: "smk-fiktif",
   name: "Website SMK Fiktif",
-  image: "assets/banner/smk-fiktif.jpg",
+  image: "assets/images/projects/smk-fiktif.jpg",
   imageAlt: "Website SMK Fiktif",
   fallbackLabel: "Website SMK Fiktif",
   fallbackColor: "default",
@@ -12,6 +12,6 @@ PROJECT_DATA.push({
   features: [
     "REST API"
   ],
-  repoUrl: "https://github.com/rizzhold/website-smkturah",
-  launchUrl: "https://rizzhold.github.io/website-smkturah/"
+  repoUrl: "https://github.com/rh-fatur/website-smkturah",
+  launchUrl: "https://rh-fatur.github.io/website-smkturah/"
 });

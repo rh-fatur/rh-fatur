@@ -1,7 +1,7 @@
 PROJECT_DATA.push({
   id: "dummy-project",
   name: "Dummy Project",
-  image: "images/project3.jpg",
+  image: "assets/images/projects/project3.jpg",
   imageAlt: "Dummy Project 3",
   fallbackLabel: "Dummy Project 3",
   fallbackColor: "default",
