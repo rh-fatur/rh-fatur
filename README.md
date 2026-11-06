@@ -16,7 +16,7 @@
 
 <!-- TOMBOL PORTFOLIO UTAMA -->
 <p align="center">
-  <a href="https://rhfaturr.github.io/RHPortfolio/" target="_blank">
+  <a href="https://rh-fatur.github.io/rh-fatur/" target="_blank">
     <img src="https://img.shields.io/badge/🚀_Visit_My_Portfolio-0D1117?style=for-the-badge&logo=googlechrome&logoColor=white&borderColor=30363D" alt="My Portfolio" height="40" />
   </a>
 </p>
