@@ -101,9 +101,9 @@
 
 <p align="center">
   <a href="https://github.com/rh-fatur/FRPortfolio">
-    <img src="https://github-readme-stats.shion.dev/api/pin/?username=rh-fatur&repo=FRPortfolio&bg_color=0D1117&title_color=FFFFFF&text_color=8B949E&icon_color=FFFFFF&border_color=30363D" width="48%" />
+    <img src="https://github-readme-stats.shion.dev/api/pin/?username=rh-fatur&repo=android-cloud-server&bg_color=0D1117&title_color=FFFFFF&text_color=8B949E&icon_color=FFFFFF&border_color=30363D" width="48%" />
   </a>
-  <a href="https://github.com/rh-fatur/rh-fatur">
+  <a href="https://github.com/rh-fatur/android-cloud-admin">
     <img src="https://github-readme-stats.shion.dev/api/pin/?username=rh-fatur&repo=rh-fatur&bg_color=0D1117&title_color=FFFFFF&text_color=8B949E&icon_color=FFFFFF&border_color=30363D" width="48%" />
   </a>
 </p>
